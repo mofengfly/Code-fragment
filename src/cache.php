@@ -4,7 +4,7 @@ session_start();
 
 header('Expires:'.date('D, d M Y H:i:s \G\M\T', time()+60));  
 
-$_SESSION['url']='www.phpben.com';  
+$_SESSION['url']='www.foo.com';  
 
 last-modified and if-last-modified
 
