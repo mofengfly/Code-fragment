@@ -1,4 +1,4 @@
 Code-fragment
 =============
 
-This is a commonly used code colletion 
+This is a commonly used code collection 
