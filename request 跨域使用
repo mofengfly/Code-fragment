@@ -1,0 +1,29 @@
+function upload(filepath, callback) {
+    var rs = fs.createReadStream(filepath);
+
+    let options = {
+        url : '',
+        formData: {
+            uploadId: +new Date,
+            file: rs,
+        },
+        headers: {
+            Origin: ''
+        },
+        agentOptions: {
+            Origin: ''
+        },
+        json: true,
+    };
+    var r = request.post(options, function optionalCallback(err, httpResponse, body) {
+        if (err) {
+            return console.error('upload failed:', err);
+        }
+
+        if(body.status.code == 200){
+            callback(body.result.key)
+        } else {
+            callback(null)
+        }
+    });
+}
